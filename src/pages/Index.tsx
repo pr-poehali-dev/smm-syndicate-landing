@@ -5,6 +5,7 @@ import Icon from "@/components/ui/icon";
 const NAV_LINKS = [
   { href: "#services", label: "Услуги" },
   { href: "#advantages", label: "Преимущества" },
+  { href: "#tariffs", label: "Тарифы" },
   { href: "#cases", label: "Кейсы" },
   { href: "#scheme", label: "Схема" },
   { href: "#about", label: "О нас" },
@@ -14,12 +15,12 @@ const NAV_LINKS = [
 ];
 
 const SERVICES = [
-  { icon: "Instagram", title: "SMM-стратегия", desc: "Разрабатываем контент-план, tone of voice и KPI под ваш бизнес с первого дня." },
-  { icon: "BarChart2", title: "Таргетированная реклама", desc: "Запускаем кампании во ВКонтакте, Telegram Ads и myTarget с ROI от 300%." },
-  { icon: "PenTool", title: "Контент-продакшн", desc: "Тексты, дизайн, Reels, подкасты — полный цикл производства контента." },
-  { icon: "Users", title: "Управление сообществами", desc: "Модерация, работа с негативом, выстраивание лояльной аудитории." },
-  { icon: "TrendingUp", title: "Influencer-маркетинг", desc: "Подбираем блогеров, ведём переговоры, контролируем выход размещений." },
-  { icon: "LineChart", title: "Аналитика и отчётность", desc: "Дашборды в реальном времени, ежемесячные отчёты с инсайтами." },
+  { num: "01", title: "SMM-стратегия", desc: "Контент-план, tone of voice и KPI под ваш бизнес." },
+  { num: "02", title: "Таргетированная реклама", desc: "Кампании во ВКонтакте, Telegram Ads и myTarget." },
+  { num: "03", title: "Контент-продакшн", desc: "Тексты, дизайн, Reels — полный цикл создания." },
+  { num: "04", title: "Управление сообществами", desc: "Модерация, работа с негативом, лояльность." },
+  { num: "05", title: "Influencer-маркетинг", desc: "Подбор блогеров, переговоры, контроль выхода." },
+  { num: "06", title: "Аналитика и отчётность", desc: "Дашборды в реальном времени, ежемесячные отчёты." },
 ];
 
 const ADVANTAGES = [
@@ -29,93 +30,134 @@ const ADVANTAGES = [
   { num: "94%", label: "Клиентов продлевают контракт" },
 ];
 
+const TARIFFS = [
+  {
+    name: "Старт",
+    price: "60 000",
+    desc: "Для малого бизнеса и личных брендов на старте",
+    features: [
+      "1 социальная сеть на выбор",
+      "12 постов в месяц",
+      "Базовая аналитика",
+      "Контент-план на месяц",
+      "Менеджер на связи 5/2",
+      "Простая модерация комментариев",
+    ],
+    featured: false,
+    cta: "Выбрать",
+  },
+  {
+    name: "Бизнес",
+    price: "140 000",
+    desc: "Оптимальный выбор для растущих компаний",
+    features: [
+      "2 социальных сети",
+      "24 поста + 8 Reels в месяц",
+      "Таргетированная реклама",
+      "Расширенная аналитика и дашборды",
+      "Выделенный SMM-менеджер",
+      "Дизайн и фото-продакшн",
+      "CRM-интеграция заявок",
+    ],
+    featured: true,
+    cta: "Популярный",
+  },
+  {
+    name: "Премиум",
+    price: "По запросу",
+    desc: "Для крупных брендов и федеральных сетей",
+    features: [
+      "Безлимит социальных сетей",
+      "Безлимитный контент",
+      "Influencer-маркетинг",
+      "Команда: стратег, дизайнер, аналитик, копирайтер",
+      "Кризис-менеджмент 24/7",
+      "Брендинговые исследования",
+      "Персональный план разработки",
+    ],
+    featured: false,
+    cta: "Обсудить",
+  },
+];
+
 const CASES = [
   {
     tag: "E-commerce",
     title: "Рост продаж на 340% за 6 месяцев",
     client: "Онлайн-магазин одежды",
-    result: "+52 000 подписчиков, ROAS 4.8",
-    color: "#D42B2B",
+    result: "+52 000 подписчиков · ROAS 4.8",
   },
   {
     tag: "HoReCa",
     title: "Открытие 3 ресторанов через соцсети",
     client: "Сеть ресторанов «Бренд»",
     result: "1 200 броней в первый месяц",
-    color: "#A01E1E",
   },
   {
     tag: "SaaS",
     title: "B2B-лиды из LinkedIn и Telegram",
     client: "IT-компания, автоматизация",
     result: "CPL снижен с 3 200₽ до 740₽",
-    color: "#7A1515",
   },
 ];
 
 const SCHEME_STEPS = [
-  { num: "01", title: "Брифинг", desc: "Изучаем бизнес, конкурентов, ЦА и цели. Формируем техзадание." },
-  { num: "02", title: "Стратегия", desc: "Готовим контент-план, медиаплан и воронку привлечения." },
-  { num: "03", title: "Запуск", desc: "Создаём контент, настраиваем рекламу, публикуем первые материалы." },
-  { num: "04", title: "Оптимизация", desc: "Анализируем данные, масштабируем то, что работает." },
-  { num: "05", title: "Отчёт", desc: "Ежемесячный созвон с командой + подробный отчёт в PDF." },
+  { num: "01", title: "Брифинг", desc: "Изучаем бизнес, конкурентов, ЦА и цели." },
+  { num: "02", title: "Стратегия", desc: "Готовим контент-план, медиаплан и воронку." },
+  { num: "03", title: "Запуск", desc: "Создаём контент, настраиваем рекламу." },
+  { num: "04", title: "Оптимизация", desc: "Анализируем данные, масштабируем гипотезы." },
+  { num: "05", title: "Отчёт", desc: "Ежемесячный созвон и подробный отчёт." },
 ];
 
 const REVIEWS = [
   {
     name: "Алексей Соколов",
     role: "Генеральный директор, TechVision",
-    text: "SMM-SYNDICATE полностью изменили наше присутствие в соцсетях. За 4 месяца органические охваты выросли в 5 раз, а стоимость лида упала вдвое. Команда всегда на связи и предлагает нестандартные решения.",
-    stars: 5,
+    text: "SMM-SYNDICATE полностью изменили наше присутствие в соцсетях. За 4 месяца органические охваты выросли в 5 раз, а стоимость лида упала вдвое.",
     avatar: "АС",
   },
   {
     name: "Марина Белова",
     role: "Маркетинг-директор, StyleHouse",
-    text: "Работаем уже второй год. Запустили Reels-стратегию с нуля — сейчас 180 000 подписчиков и постоянный поток клиентов из Instagram. Профессионалы своего дела.",
-    stars: 5,
+    text: "Работаем уже второй год. Запустили Reels-стратегию с нуля — сейчас 180 000 подписчиков и постоянный поток клиентов из Instagram.",
     avatar: "МБ",
   },
   {
     name: "Дмитрий Черных",
     role: "Основатель, FoodBrand",
-    text: "Скептически относился к SMM, но результат говорит сам за себя. Перед открытием второго ресторана подготовили кампанию — в первую неделю 400 броней только из соцсетей. Рекомендую без оговорок.",
-    stars: 5,
+    text: "Скептически относился к SMM, но результат говорит сам за себя. Перед открытием второго ресторана подготовили кампанию — в первую неделю 400 броней.",
     avatar: "ДЧ",
   },
   {
     name: "Ольга Тимофеева",
     role: "CEO, EduStart",
-    text: "Давно искала агентство, которое понимает B2B-контент. SMM-SYNDICATE не просто постят — они выстраивают репутацию. Нам удалось выйти на enterprise-клиентов через Telegram-канал с их помощью.",
-    stars: 5,
+    text: "Давно искала агентство, которое понимает B2B-контент. SMM-SYNDICATE не просто постят — они выстраивают репутацию.",
     avatar: "ОТ",
   },
   {
     name: "Игорь Власов",
     role: "CMO, AutoParts Group",
-    text: "Привёл клиентов из ВКонтакте, которых считал недостижимыми. Ребята разработали нишевую стратегию специально под B2B-авторынок. Через 3 месяца — 60 корпоративных заявок.",
-    stars: 5,
+    text: "Привёл клиентов из ВКонтакте, которых считал недостижимыми. Через 3 месяца — 60 корпоративных заявок.",
     avatar: "ИВ",
   },
   {
     name: "Светлана Романова",
     role: "Директор по развитию, MedClinic",
-    text: "Медицинская тематика требует особого подхода. Команда разобралась во всех ограничениях и создала контент, который одновременно продаёт и вызывает доверие. Запись увеличилась на 35%.",
-    stars: 5,
+    text: "Медицинская тематика требует особого подхода. Команда создала контент, который одновременно продаёт и вызывает доверие.",
     avatar: "СР",
   },
 ];
 
 const FAQ_ITEMS = [
   { q: "Сколько времени занимает запуск?", a: "Первые материалы выходят уже на 7–10 день после подписания договора. Полноценная стратегия разворачивается в течение первого месяца." },
-  { q: "Как вы измеряете результат?", a: "Устанавливаем KPI на старте: охваты, вовлечённость, CPL, ROAS. Еженедельные дашборды и ежемесячные отчёты — всегда знаете, куда движемся." },
-  { q: "Работаете ли вы с небольшим бюджетом?", a: "Минимальный бюджет на ведение — от 60 000 ₽/мес. Рекламный бюджет согласовывается отдельно, исходя из ваших целей." },
-  { q: "Какие соцсети охватываете?", a: "ВКонтакте, Telegram, Instagram*, YouTube, Одноклассники, TikTok, LinkedIn. *признан нежелательной организацией на территории РФ." },
-  { q: "Как происходит коммуникация с командой?", a: "Выделенный менеджер, общий чат в Telegram, еженедельные созвоны. Время ответа в рабочее время — до 2 часов." },
+  { q: "Как вы измеряете результат?", a: "Устанавливаем KPI на старте: охваты, вовлечённость, CPL, ROAS. Еженедельные дашборды и ежемесячные отчёты." },
+  { q: "Работаете ли вы с небольшим бюджетом?", a: "Минимальный бюджет на ведение — от 60 000 ₽/мес. Рекламный бюджет согласовывается отдельно." },
+  { q: "Какие соцсети охватываете?", a: "ВКонтакте, Telegram, YouTube, Одноклассники, TikTok, LinkedIn и другие площадки по запросу." },
+  { q: "Как происходит коммуникация?", a: "Выделенный менеджер, общий чат в Telegram, еженедельные созвоны. Ответ в рабочее время — до 2 часов." },
   { q: "Есть ли NDA и защита данных?", a: "Да, подписываем NDA перед началом работы. Все данные клиента хранятся на защищённых серверах в России." },
 ];
 
-/* ─── Hook: intersection observer ─── */
+/* ─── Hook ─── */
 function useVisible(threshold = 0.15) {
   const ref = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(false);
@@ -129,22 +171,18 @@ function useVisible(threshold = 0.15) {
   return { ref, visible };
 }
 
-/* ─── Sub-components ─── */
-function Stars({ n = 5 }: { n?: number }) {
+/* ─── Section Header ─── */
+function SectionHeader({ tag, title, sub }: { tag: string; title: string; sub?: string }) {
   return (
-    <div className="flex gap-0.5">
-      {Array.from({ length: n }).map((_, i) => (
-        <svg key={i} className="w-4 h-4 fill-[#D42B2B]" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
-      ))}
-    </div>
-  );
-}
-
-function SectionHeader({ tag, title, light = false }: { tag: string; title: string; light?: boolean }) {
-  return (
-    <div className="mb-12">
-      <span className="text-xs font-semibold tracking-[0.2em] uppercase text-[#D42B2B] mb-3 block">{tag}</span>
-      <h2 className={`text-4xl md:text-5xl font-bold uppercase leading-tight ${light ? "text-white" : "text-white"}`}>{title}</h2>
+    <div className="mb-16">
+      <div className="flex items-center gap-4 mb-6">
+        <span className="w-8 h-px bg-[#141414]"></span>
+        <span className="text-[10px] font-medium tracking-[0.3em] uppercase text-[#6B6660]">{tag}</span>
+      </div>
+      <h2 className="font-['Cormorant'] text-5xl md:text-6xl lg:text-7xl font-light leading-[1.05] text-[#141414] max-w-4xl">
+        {title}
+      </h2>
+      {sub && <p className="mt-6 text-[#6B6660] text-base max-w-2xl leading-relaxed">{sub}</p>}
     </div>
   );
 }
@@ -157,7 +195,6 @@ export default function Index() {
   const [form, setForm] = useState({ name: "", phone: "", company: "", goal: "" });
   const [sent, setSent] = useState(false);
 
-  /* Navbar scroll effect */
   useEffect(() => {
     const h = () => setScrolled(window.scrollY > 60);
     window.addEventListener("scroll", h);
@@ -174,9 +211,9 @@ export default function Index() {
     setSent(true);
   };
 
-  /* Visibility hooks */
   const servVis  = useVisible();
   const advVis   = useVisible();
+  const tarVis   = useVisible();
   const casesVis = useVisible();
   const schVis   = useVisible();
   const aboutVis = useVisible();
@@ -185,115 +222,121 @@ export default function Index() {
   const ctaVis   = useVisible();
 
   return (
-    <div className="min-h-screen bg-[#0A0A0A] text-[#F0F0F0] overflow-x-hidden">
+    <div className="min-h-screen bg-[#F4F2EE] text-[#141414] overflow-x-hidden">
 
       {/* ── NAVBAR ── */}
-      <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "bg-[#0A0A0A]/95 backdrop-blur border-b border-[#1A1A1A]" : "bg-transparent"}`}>
-        <div className="max-w-7xl mx-auto px-6 flex items-center justify-between h-16">
-          <a href="#" className="font-['Oswald'] text-xl font-bold tracking-widest uppercase">
-            SMM<span className="text-[#D42B2B]">—</span>SYNDICATE
+      <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled ? "bg-[#F4F2EE]/90 backdrop-blur-md border-b border-[#D8D3C9]" : "bg-transparent"}`}>
+        <div className="max-w-[1400px] mx-auto px-6 lg:px-12 flex items-center justify-between h-20">
+          <a href="#" className="flex items-center gap-2">
+            <span className="font-['Cormorant'] text-2xl font-medium tracking-tight">SMM</span>
+            <span className="w-1.5 h-1.5 bg-[#141414] rounded-full"></span>
+            <span className="font-['Cormorant'] text-2xl font-medium tracking-tight italic">Syndicate</span>
           </a>
-          {/* Desktop nav */}
-          <div className="hidden lg:flex items-center gap-7">
+          <div className="hidden lg:flex items-center gap-8">
             {NAV_LINKS.map(l => (
               <button key={l.href} onClick={() => scrollTo(l.href)}
-                className="text-xs tracking-widest uppercase text-[#888] hover:text-white transition-colors duration-200">
+                className="text-[11px] tracking-[0.15em] uppercase text-[#6B6660] hover:text-[#141414] transition-colors duration-300 link-underline">
                 {l.label}
               </button>
             ))}
           </div>
           <button onClick={() => scrollTo("#contacts")}
-            className="hidden lg:block bg-[#D42B2B] hover:bg-[#A01E1E] text-white text-xs font-semibold tracking-widest uppercase px-5 py-2.5 transition-colors duration-200">
-            Оставить заявку
+            className="hidden lg:flex items-center gap-2 group">
+            <span className="text-[11px] tracking-[0.15em] uppercase font-medium">Связаться</span>
+            <span className="w-8 h-px bg-[#141414] group-hover:w-12 transition-all duration-300"></span>
           </button>
-          {/* Burger */}
-          <button className="lg:hidden text-white" onClick={() => setMenuOpen(v => !v)}>
-            <Icon name={menuOpen ? "X" : "Menu"} size={22} />
+          <button className="lg:hidden text-[#141414]" onClick={() => setMenuOpen(v => !v)}>
+            <Icon name={menuOpen ? "X" : "Menu"} size={20} />
           </button>
         </div>
-        {/* Mobile menu */}
         {menuOpen && (
-          <div className="lg:hidden bg-[#111] border-t border-[#1A1A1A] px-6 py-6 flex flex-col gap-4">
+          <div className="lg:hidden bg-[#F4F2EE] border-t border-[#D8D3C9] px-6 py-8 flex flex-col gap-5">
             {NAV_LINKS.map(l => (
               <button key={l.href} onClick={() => scrollTo(l.href)}
-                className="text-sm tracking-widest uppercase text-left text-[#888] hover:text-white transition-colors">
+                className="text-sm tracking-[0.15em] uppercase text-left text-[#6B6660] hover:text-[#141414] transition-colors">
                 {l.label}
               </button>
             ))}
-            <button onClick={() => scrollTo("#contacts")}
-              className="mt-2 bg-[#D42B2B] text-white text-xs font-semibold tracking-widest uppercase px-5 py-3 text-left">
-              Оставить заявку
-            </button>
           </div>
         )}
       </nav>
 
       {/* ── HERO ── */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        {/* BG image */}
-        <div className="absolute inset-0">
-          <img src="https://cdn.poehali.dev/projects/e5b96c69-7b10-4ae3-909a-5f592454ca9a/files/c686f78d-e6da-4147-bca3-dca99aa58307.jpg"
-            alt="" className="w-full h-full object-cover opacity-30" />
-          <div className="absolute inset-0 bg-gradient-to-b from-[#0A0A0A]/60 via-transparent to-[#0A0A0A]" />
-        </div>
+      <section className="relative min-h-screen flex items-center pt-32 pb-20">
+        <div className="max-w-[1400px] mx-auto px-6 lg:px-12 w-full">
+          <div className="grid grid-cols-12 gap-6">
+            <div className="col-span-12 lg:col-span-9 lg:col-start-2">
+              <div className="animate-fade-in">
+                <div className="flex items-center gap-4 mb-10">
+                  <span className="w-8 h-px bg-[#141414]"></span>
+                  <span className="text-[10px] font-medium tracking-[0.3em] uppercase text-[#6B6660]">EST · Агентство SMM</span>
+                </div>
+              </div>
 
-        {/* Marquee strip */}
-        <div className="absolute top-24 left-0 right-0 overflow-hidden py-2 border-y border-[#1A1A1A]">
-          <div className="flex animate-marquee whitespace-nowrap">
-            {Array.from({ length: 8 }).map((_, i) => (
-              <span key={i} className="text-[10px] tracking-[0.25em] uppercase text-[#D42B2B] mx-6 opacity-70">
-                SMM-SYNDICATE · Таргет · Контент · Аналитика · Influencer ·
-              </span>
+              <h1 className="font-['Cormorant'] text-[14vw] md:text-[10vw] lg:text-[8vw] font-light leading-[0.95] text-[#141414] animate-fade-in-up">
+                Синдикат,<br />
+                <span className="italic font-light text-[#2B2B2B]">который продаёт.</span>
+              </h1>
+
+              <div className="mt-12 grid grid-cols-1 lg:grid-cols-12 gap-8 items-end">
+                <p className="lg:col-span-6 text-base text-[#6B6660] leading-relaxed animate-fade-in-up delay-200">
+                  Полный цикл SMM: от стратегии до аналитики. Превращаем подписчиков
+                  в клиентов, а соцсети — в главный канал роста вашего бизнеса.
+                </p>
+                <div className="lg:col-span-6 flex flex-col sm:flex-row gap-3 animate-fade-in-up delay-300">
+                  <button onClick={() => scrollTo("#contacts")}
+                    className="group flex items-center justify-between gap-4 bg-[#141414] text-[#F4F2EE] px-8 py-5 hover:bg-[#2B2B2B] transition-all duration-300">
+                    <span className="text-xs tracking-[0.2em] uppercase font-medium">Получить стратегию</span>
+                    <Icon name="ArrowRight" size={16} className="group-hover:translate-x-1 transition-transform" />
+                  </button>
+                  <button onClick={() => scrollTo("#cases")}
+                    className="group flex items-center justify-between gap-4 border border-[#141414] text-[#141414] px-8 py-5 hover:bg-[#141414] hover:text-[#F4F2EE] transition-all duration-300">
+                    <span className="text-xs tracking-[0.2em] uppercase font-medium">Смотреть кейсы</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Bottom strip */}
+          <div className="mt-24 pt-8 border-t border-[#D8D3C9] grid grid-cols-2 md:grid-cols-4 gap-6 animate-fade-in delay-500">
+            {ADVANTAGES.map((a, i) => (
+              <div key={i}>
+                <div className="font-['Cormorant'] text-3xl md:text-4xl font-light text-[#141414]">{a.num}</div>
+                <div className="text-[10px] tracking-[0.2em] uppercase text-[#6B6660] mt-1">{a.label}</div>
+              </div>
             ))}
           </div>
         </div>
+      </section>
 
-        <div className="relative z-10 max-w-5xl mx-auto px-6 text-center">
-          <div className="animate-fade-in">
-            <p className="text-xs tracking-[0.35em] uppercase text-[#D42B2B] mb-6">Агентство нового поколения</p>
-          </div>
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold uppercase leading-[0.95] tracking-tight animate-fade-in-up">
-            Синдикат,<br />
-            <span className="text-[#D42B2B]">который</span><br />
-            продаёт
-          </h1>
-          <p className="mt-8 text-base md:text-lg text-[#888] max-w-2xl mx-auto leading-relaxed animate-fade-in-up delay-200">
-            Полный цикл SMM: от стратегии до аналитики. Превращаем подписчиков в клиентов,
-            а соцсети — в главный канал роста вашего бизнеса.
-          </p>
-          <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up delay-300">
-            <button onClick={() => scrollTo("#contacts")}
-              className="bg-[#D42B2B] hover:bg-[#A01E1E] text-white font-semibold tracking-widest uppercase px-10 py-4 text-sm transition-all duration-200 animate-pulse-red">
-              Получить стратегию бесплатно
-            </button>
-            <button onClick={() => scrollTo("#cases")}
-              className="border border-[#333] hover:border-[#D42B2B] text-[#888] hover:text-white font-semibold tracking-widest uppercase px-10 py-4 text-sm transition-all duration-200">
-              Смотреть кейсы
-            </button>
-          </div>
-        </div>
-
-        {/* Scroll hint */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-40">
-          <span className="text-[10px] tracking-widest uppercase">Скролл</span>
-          <Icon name="ChevronDown" size={16} />
+      {/* ── MARQUEE ── */}
+      <section className="border-y border-[#D8D3C9] py-6 overflow-hidden bg-[#EDEAE3]">
+        <div className="flex animate-marquee whitespace-nowrap">
+          {Array.from({ length: 10 }).map((_, i) => (
+            <span key={i} className="font-['Cormorant'] text-3xl italic text-[#141414] mx-8">
+              стратегия · контент · таргет · аналитика · influencer ·
+            </span>
+          ))}
         </div>
       </section>
 
       {/* ── SERVICES ── */}
-      <section id="services" className="py-24 max-w-7xl mx-auto px-6">
-        <div ref={servVis.ref}>
-          <SectionHeader tag="Что мы делаем" title="Наши услуги" />
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      <section id="services" className="py-32">
+        <div ref={servVis.ref} className="max-w-[1400px] mx-auto px-6 lg:px-12">
+          <SectionHeader tag="01 · Услуги" title="Что мы делаем"
+            sub="Шесть направлений, объединённых одной целью — превращать внимание в выручку." />
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 border-t border-[#D8D3C9]">
             {SERVICES.map((s, i) => (
               <div key={i}
-                className={`border border-[#1A1A1A] bg-[#111] p-7 hover-lift cursor-default group transition-all duration-300 hover:border-[#D42B2B]/40 ${servVis.visible ? "animate-fade-in-up" : "opacity-0"}`}
-                style={{ animationDelay: `${i * 0.1}s` }}>
-                <div className="w-10 h-10 flex items-center justify-center bg-[#D42B2B]/10 mb-5 group-hover:bg-[#D42B2B]/20 transition-colors">
-                  <Icon name={s.icon} fallback="Star" size={18} className="text-[#D42B2B]" />
+                className={`group p-10 border-b border-r border-[#D8D3C9] hover:bg-[#EDEAE3] transition-colors duration-500 cursor-default ${servVis.visible ? "animate-fade-in-up" : "opacity-0"}`}
+                style={{ animationDelay: `${i * 0.08}s` }}>
+                <div className="flex items-start justify-between mb-8">
+                  <span className="font-['Cormorant'] text-2xl italic text-[#6B6660]">{s.num}</span>
+                  <Icon name="ArrowUpRight" size={18} className="text-[#141414] opacity-0 group-hover:opacity-100 group-hover:translate-x-1 group-hover:-translate-y-1 transition-all duration-300" />
                 </div>
-                <h3 className="text-lg font-bold uppercase mb-3">{s.title}</h3>
-                <p className="text-[#666] text-sm leading-relaxed">{s.desc}</p>
+                <h3 className="font-['Cormorant'] text-3xl font-medium mb-4 leading-tight">{s.title}</h3>
+                <p className="text-[#6B6660] text-sm leading-relaxed">{s.desc}</p>
               </div>
             ))}
           </div>
@@ -301,63 +344,126 @@ export default function Index() {
       </section>
 
       {/* ── ADVANTAGES ── */}
-      <section id="advantages" className="py-20 bg-[#D42B2B]">
-        <div ref={advVis.ref} className="max-w-7xl mx-auto px-6">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {ADVANTAGES.map((a, i) => (
+      <section id="advantages" className="py-32 bg-[#141414] text-[#F4F2EE]">
+        <div ref={advVis.ref} className="max-w-[1400px] mx-auto px-6 lg:px-12">
+          <div className="mb-16">
+            <div className="flex items-center gap-4 mb-6">
+              <span className="w-8 h-px bg-[#F4F2EE]"></span>
+              <span className="text-[10px] font-medium tracking-[0.3em] uppercase text-[#888]">02 · Преимущества</span>
+            </div>
+            <h2 className="font-['Cormorant'] text-5xl md:text-6xl lg:text-7xl font-light leading-[1.05] max-w-4xl">
+              Почему выбирают <span className="italic">нас</span>
+            </h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-10">
+            {[
+              { t: "Прозрачная аналитика", d: "Доступ к дашбордам 24/7. Видите каждый рубль и каждую конверсию." },
+              { t: "Команда экспертов", d: "Стратеги, дизайнеры, копирайтеры и таргетологи — отдельный человек под каждую задачу." },
+              { t: "Гарантия результата", d: "Фиксируем KPI в договоре. Не достигли — компенсируем работой." },
+              { t: "Глубокая интеграция", d: "CRM, аналитика, сквозная воронка — соцсети становятся частью вашей системы." },
+            ].map((a, i) => (
               <div key={i}
-                className={`text-center ${advVis.visible ? "animate-fade-in-up" : "opacity-0"}`}
-                style={{ animationDelay: `${i * 0.12}s` }}>
-                <div className="text-5xl md:text-6xl font-bold font-['Oswald'] text-white">{a.num}</div>
-                <div className="mt-2 text-xs tracking-widest uppercase text-white/70">{a.label}</div>
+                className={`flex gap-6 ${advVis.visible ? "animate-fade-in-up" : "opacity-0"}`}
+                style={{ animationDelay: `${i * 0.1}s` }}>
+                <span className="font-['Cormorant'] italic text-2xl text-[#888] shrink-0">0{i + 1}</span>
+                <div>
+                  <h3 className="font-['Cormorant'] text-2xl font-medium mb-2">{a.t}</h3>
+                  <p className="text-[#999] text-sm leading-relaxed">{a.d}</p>
+                </div>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ── CASES ── */}
-      <section id="cases" className="py-24 max-w-7xl mx-auto px-6">
-        <div ref={casesVis.ref}>
-          <SectionHeader tag="Портфолио" title="Избранные кейсы" />
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            {CASES.map((c, i) => (
+      {/* ── TARIFFS ── */}
+      <section id="tariffs" className="py-32 bg-[#F4F2EE]">
+        <div ref={tarVis.ref} className="max-w-[1400px] mx-auto px-6 lg:px-12">
+          <SectionHeader tag="03 · Тарифы" title="Выберите свой формат"
+            sub="Прозрачные пакеты без скрытых платежей. Возможна индивидуальная сборка под задачу." />
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-px bg-[#D8D3C9] border border-[#D8D3C9]">
+            {TARIFFS.map((t, i) => (
               <div key={i}
-                className={`relative overflow-hidden border border-[#1A1A1A] bg-[#111] p-8 hover-lift group cursor-default ${casesVis.visible ? "animate-fade-in-up" : "opacity-0"}`}
-                style={{ animationDelay: `${i * 0.15}s` }}>
-                <div className="absolute top-0 left-0 w-1 h-full" style={{ background: c.color }} />
-                <span className="text-[10px] tracking-[0.2em] uppercase text-[#D42B2B] mb-4 block">{c.tag}</span>
-                <h3 className="text-xl font-bold uppercase leading-snug mb-3">{c.title}</h3>
-                <p className="text-[#555] text-xs uppercase tracking-widest mb-6">{c.client}</p>
-                <div className="border-t border-[#1A1A1A] pt-4">
-                  <p className="text-sm text-[#888]"><span className="text-white font-semibold">Результат:</span> {c.result}</p>
+                className={`p-10 bg-[#F4F2EE] flex flex-col ${t.featured ? "bg-[#141414] text-[#F4F2EE]" : ""} ${tarVis.visible ? "animate-fade-in-up" : "opacity-0"}`}
+                style={{ animationDelay: `${i * 0.12}s` }}>
+                <div className="flex items-center justify-between mb-6">
+                  <span className={`font-['Cormorant'] text-2xl italic ${t.featured ? "text-[#888]" : "text-[#6B6660]"}`}>0{i + 1}</span>
+                  {t.featured && (
+                    <span className="text-[10px] tracking-[0.2em] uppercase border border-[#F4F2EE] px-3 py-1">Хит</span>
+                  )}
                 </div>
+                <h3 className="font-['Cormorant'] text-4xl font-medium mb-3">{t.name}</h3>
+                <p className={`text-sm mb-8 leading-relaxed ${t.featured ? "text-[#999]" : "text-[#6B6660]"}`}>{t.desc}</p>
+                <div className="mb-8">
+                  <div className="flex items-baseline gap-2">
+                    <span className="font-['Cormorant'] text-5xl font-light">{t.price}</span>
+                    {t.price !== "По запросу" && <span className={`text-xs ${t.featured ? "text-[#999]" : "text-[#6B6660]"}`}>₽/мес</span>}
+                  </div>
+                </div>
+                <ul className="space-y-3 mb-10 flex-1">
+                  {t.features.map((f, j) => (
+                    <li key={j} className="flex items-start gap-3 text-sm">
+                      <Icon name="Check" size={14} className={`mt-1 shrink-0 ${t.featured ? "text-[#F4F2EE]" : "text-[#141414]"}`} />
+                      <span className={t.featured ? "text-[#D8D3C9]" : "text-[#2B2B2B]"}>{f}</span>
+                    </li>
+                  ))}
+                </ul>
+                <button onClick={() => scrollTo("#contacts")}
+                  className={`group flex items-center justify-between gap-4 px-6 py-4 border transition-all duration-300 ${
+                    t.featured
+                      ? "border-[#F4F2EE] hover:bg-[#F4F2EE] hover:text-[#141414]"
+                      : "border-[#141414] hover:bg-[#141414] hover:text-[#F4F2EE]"
+                  }`}>
+                  <span className="text-xs tracking-[0.2em] uppercase font-medium">{t.cta}</span>
+                  <Icon name="ArrowRight" size={14} className="group-hover:translate-x-1 transition-transform" />
+                </button>
               </div>
             ))}
           </div>
-          <div className="mt-8 text-center">
-            <button className="border border-[#333] hover:border-[#D42B2B] text-[#666] hover:text-white text-xs tracking-widest uppercase px-10 py-3.5 transition-all duration-200">
-              Все кейсы (20+)
+          <p className="mt-8 text-center text-xs text-[#6B6660]">
+            Цены указаны без учёта рекламного бюджета. Все тарифы согласовываются индивидуально.
+          </p>
+        </div>
+      </section>
+
+      {/* ── CASES ── */}
+      <section id="cases" className="py-32 bg-[#EDEAE3]">
+        <div ref={casesVis.ref} className="max-w-[1400px] mx-auto px-6 lg:px-12">
+          <SectionHeader tag="04 · Портфолио" title="Избранные кейсы" />
+          <div className="space-y-px bg-[#D8D3C9] border-y border-[#D8D3C9]">
+            {CASES.map((c, i) => (
+              <div key={i}
+                className={`group bg-[#EDEAE3] hover:bg-[#F4F2EE] p-10 transition-colors duration-500 grid grid-cols-1 md:grid-cols-12 gap-6 items-center cursor-default ${casesVis.visible ? "animate-fade-in-up" : "opacity-0"}`}
+                style={{ animationDelay: `${i * 0.1}s` }}>
+                <span className="md:col-span-1 font-['Cormorant'] text-2xl italic text-[#6B6660]">0{i + 1}</span>
+                <span className="md:col-span-2 text-[10px] tracking-[0.2em] uppercase text-[#6B6660]">{c.tag}</span>
+                <h3 className="md:col-span-5 font-['Cormorant'] text-2xl md:text-3xl font-medium leading-tight">{c.title}</h3>
+                <p className="md:col-span-3 text-sm text-[#6B6660]">{c.result}</p>
+                <Icon name="ArrowUpRight" size={20} className="md:col-span-1 md:justify-self-end text-[#141414] opacity-0 group-hover:opacity-100 group-hover:translate-x-1 group-hover:-translate-y-1 transition-all duration-300" />
+              </div>
+            ))}
+          </div>
+          <div className="mt-12 text-center">
+            <button className="group inline-flex items-center gap-4 text-xs tracking-[0.2em] uppercase border-b border-[#141414] pb-1 hover:gap-6 transition-all">
+              Все кейсы — 20+
+              <Icon name="ArrowRight" size={14} />
             </button>
           </div>
         </div>
       </section>
 
       {/* ── SCHEME ── */}
-      <section id="scheme" className="py-24 bg-[#0D0D0D] border-y border-[#1A1A1A]">
-        <div ref={schVis.ref} className="max-w-7xl mx-auto px-6">
-          <SectionHeader tag="Как мы работаем" title="Схема сотрудничества" />
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+      <section id="scheme" className="py-32">
+        <div ref={schVis.ref} className="max-w-[1400px] mx-auto px-6 lg:px-12">
+          <SectionHeader tag="05 · Процесс" title="Как мы работаем" />
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-px bg-[#D8D3C9] border border-[#D8D3C9]">
             {SCHEME_STEPS.map((s, i) => (
               <div key={i}
-                className={`relative p-6 bg-[#111] border border-[#1A1A1A] hover:border-[#D42B2B]/30 transition-colors ${schVis.visible ? "animate-fade-in-up" : "opacity-0"}`}
+                className={`bg-[#F4F2EE] p-8 hover:bg-[#EDEAE3] transition-colors duration-500 ${schVis.visible ? "animate-fade-in-up" : "opacity-0"}`}
                 style={{ animationDelay: `${i * 0.1}s` }}>
-                {i < SCHEME_STEPS.length - 1 && (
-                  <div className="hidden lg:block absolute top-1/2 -right-2 w-4 h-px bg-[#D42B2B]/50 z-10" />
-                )}
-                <span className="text-3xl font-bold font-['Oswald'] text-[#D42B2B]/30 block mb-3">{s.num}</span>
-                <h4 className="font-bold uppercase text-sm mb-2">{s.title}</h4>
-                <p className="text-[#555] text-xs leading-relaxed">{s.desc}</p>
+                <span className="font-['Cormorant'] text-5xl font-light text-[#6B6660]/40 block mb-6">{s.num}</span>
+                <h4 className="font-['Cormorant'] text-2xl font-medium mb-3">{s.title}</h4>
+                <p className="text-[#6B6660] text-sm leading-relaxed">{s.desc}</p>
               </div>
             ))}
           </div>
@@ -365,56 +471,57 @@ export default function Index() {
       </section>
 
       {/* ── ABOUT ── */}
-      <section id="about" className="py-24 max-w-7xl mx-auto px-6">
-        <div ref={aboutVis.ref} className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          <div className={aboutVis.visible ? "animate-slide-left" : "opacity-0"}>
-            <SectionHeader tag="О компании" title="Синдикат экспертов в SMM" />
-            <div className="space-y-4 text-[#666] leading-relaxed text-sm">
-              <p>SMM-SYNDICATE основана в 2016 году командой маркетологов, аналитиков и дизайнеров, объединённых одной идеей: <strong className="text-white">SMM должен давать измеримый результат</strong>.</p>
-              <p>За 8 лет мы построили команду из 40+ специалистов и выработали систему, при которой каждое действие в соцсетях направлено на рост бизнеса клиента — не на красивые цифры в отчётах.</p>
+      <section id="about" className="py-32 bg-[#141414] text-[#F4F2EE]">
+        <div ref={aboutVis.ref} className="max-w-[1400px] mx-auto px-6 lg:px-12 grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+          <div className={`lg:col-span-5 ${aboutVis.visible ? "animate-slide-left" : "opacity-0"}`}>
+            <div className="flex items-center gap-4 mb-6">
+              <span className="w-8 h-px bg-[#F4F2EE]"></span>
+              <span className="text-[10px] font-medium tracking-[0.3em] uppercase text-[#888]">06 · О компании</span>
+            </div>
+            <h2 className="font-['Cormorant'] text-5xl md:text-6xl font-light leading-[1.05]">
+              Синдикат <span className="italic">экспертов</span> в SMM
+            </h2>
+          </div>
+          <div className={`lg:col-span-6 lg:col-start-7 ${aboutVis.visible ? "animate-fade-in-up delay-200" : "opacity-0"}`}>
+            <div className="space-y-5 text-[#D8D3C9] text-base leading-relaxed">
+              <p>SMM-SYNDICATE основана командой маркетологов, аналитиков и дизайнеров, объединённых одной идеей: <span className="text-[#F4F2EE]">SMM должен давать измеримый результат</span>.</p>
+              <p>За 8 лет мы построили команду из 40+ специалистов и выработали систему, при которой каждое действие в соцсетях направлено на рост бизнеса клиента.</p>
               <p>Мы работаем с компаниями из e-commerce, HoReCa, IT, медицины, девелопмента и B2B-сектора по всей России и СНГ.</p>
             </div>
-            <div className="mt-8 flex flex-wrap gap-3">
-              {["Топ-3 агентств России 2023", "Сертифицированный партнёр ВК", "Google Premier Partner"].map(b => (
-                <span key={b} className="text-xs tracking-wide border border-[#D42B2B]/40 text-[#D42B2B] px-4 py-1.5">{b}</span>
+            <div className="mt-10 grid grid-cols-3 gap-6 pt-8 border-t border-[#2B2B2B]">
+              {[
+                { v: "Топ-3", l: "Рейтинг агентств" },
+                { v: "15+", l: "Городов России" },
+                { v: "40+", l: "Специалистов" },
+              ].map(i => (
+                <div key={i.l}>
+                  <div className="font-['Cormorant'] text-3xl font-light">{i.v}</div>
+                  <div className="text-[10px] tracking-[0.2em] uppercase text-[#888] mt-1">{i.l}</div>
+                </div>
               ))}
             </div>
-          </div>
-          <div className={`grid grid-cols-2 gap-4 ${aboutVis.visible ? "animate-fade-in-up" : "opacity-0"}`}>
-            {[
-              { icon: "Award", val: "Топ-3", label: "рейтинг агентств" },
-              { icon: "Globe", val: "15+", label: "городов России" },
-              { icon: "Users", val: "40+", label: "специалистов" },
-              { icon: "Clock", val: "24/7", label: "поддержка клиентов" },
-            ].map((item, i) => (
-              <div key={i} className="bg-[#111] border border-[#1A1A1A] p-6 text-center">
-                <Icon name={item.icon} fallback="Star" size={20} className="text-[#D42B2B] mx-auto mb-3" />
-                <div className="text-2xl font-bold font-['Oswald']">{item.val}</div>
-                <div className="text-[#555] text-xs mt-1">{item.label}</div>
-              </div>
-            ))}
           </div>
         </div>
       </section>
 
       {/* ── REVIEWS ── */}
-      <section id="reviews" className="py-24 bg-[#0D0D0D] border-y border-[#1A1A1A]">
-        <div ref={revVis.ref} className="max-w-7xl mx-auto px-6">
-          <SectionHeader tag="Клиенты о нас" title="Отзывы" />
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      <section id="reviews" className="py-32">
+        <div ref={revVis.ref} className="max-w-[1400px] mx-auto px-6 lg:px-12">
+          <SectionHeader tag="07 · Клиенты" title="Что говорят о нас" />
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-[#D8D3C9] border border-[#D8D3C9]">
             {REVIEWS.map((r, i) => (
               <div key={i}
-                className={`bg-[#111] border border-[#1A1A1A] p-7 hover-lift group hover:border-[#D42B2B]/30 transition-all duration-300 ${revVis.visible ? "animate-fade-in-up" : "opacity-0"}`}
-                style={{ animationDelay: `${i * 0.1}s` }}>
-                <Stars n={r.stars} />
-                <p className="mt-4 text-[#888] text-sm leading-relaxed">&ldquo;{r.text}&rdquo;</p>
-                <div className="mt-6 flex items-center gap-3 border-t border-[#1A1A1A] pt-5">
-                  <div className="w-9 h-9 rounded-full bg-[#D42B2B] flex items-center justify-center text-white text-xs font-bold font-['Oswald'] shrink-0">
+                className={`bg-[#F4F2EE] p-10 hover:bg-[#EDEAE3] transition-colors duration-500 flex flex-col ${revVis.visible ? "animate-fade-in-up" : "opacity-0"}`}
+                style={{ animationDelay: `${i * 0.08}s` }}>
+                <Icon name="Quote" size={24} className="text-[#141414] mb-6" />
+                <p className="text-[#2B2B2B] text-base leading-relaxed flex-1 font-light">{r.text}</p>
+                <div className="mt-8 pt-6 border-t border-[#D8D3C9] flex items-center gap-4">
+                  <div className="w-10 h-10 rounded-full bg-[#141414] text-[#F4F2EE] flex items-center justify-center text-xs font-medium shrink-0">
                     {r.avatar}
                   </div>
                   <div>
-                    <div className="text-sm font-semibold leading-tight">{r.name}</div>
-                    <div className="text-[#555] text-xs mt-0.5">{r.role}</div>
+                    <div className="font-['Cormorant'] text-lg font-medium leading-tight">{r.name}</div>
+                    <div className="text-[10px] tracking-[0.15em] uppercase text-[#6B6660] mt-1">{r.role}</div>
                   </div>
                 </div>
               </div>
@@ -424,22 +531,24 @@ export default function Index() {
       </section>
 
       {/* ── FAQ ── */}
-      <section id="faq" className="py-24 max-w-4xl mx-auto px-6">
-        <div ref={faqVis.ref}>
-          <SectionHeader tag="Вопросы и ответы" title="FAQ" />
-          <div className="space-y-2">
+      <section id="faq" className="py-32 bg-[#EDEAE3]">
+        <div ref={faqVis.ref} className="max-w-3xl mx-auto px-6 lg:px-12">
+          <SectionHeader tag="08 · FAQ" title="Частые вопросы" />
+          <div className="border-t border-[#D8D3C9]">
             {FAQ_ITEMS.map((item, i) => (
               <div key={i}
-                className={`border border-[#1A1A1A] bg-[#111] overflow-hidden ${faqVis.visible ? "animate-fade-in-up" : "opacity-0"}`}
-                style={{ animationDelay: `${i * 0.08}s` }}>
+                className={`border-b border-[#D8D3C9] ${faqVis.visible ? "animate-fade-in-up" : "opacity-0"}`}
+                style={{ animationDelay: `${i * 0.06}s` }}>
                 <button
                   onClick={() => setOpenFaq(openFaq === i ? null : i)}
-                  className="w-full flex items-center justify-between px-6 py-5 text-left hover:bg-[#161616] transition-colors">
-                  <span className="font-semibold text-sm pr-4">{item.q}</span>
-                  <Icon name={openFaq === i ? "Minus" : "Plus"} size={16} className="text-[#D42B2B] shrink-0" />
+                  className="w-full flex items-center justify-between py-6 text-left group">
+                  <span className="font-['Cormorant'] text-2xl font-medium pr-4 group-hover:italic transition-all">{item.q}</span>
+                  <span className={`w-8 h-8 border border-[#141414] flex items-center justify-center shrink-0 transition-all duration-300 ${openFaq === i ? "bg-[#141414] text-[#F4F2EE] rotate-45" : ""}`}>
+                    <Icon name="Plus" size={14} />
+                  </span>
                 </button>
                 {openFaq === i && (
-                  <div className="px-6 pb-5 text-[#666] text-sm leading-relaxed border-t border-[#1A1A1A] pt-4 animate-fade-in">
+                  <div className="pb-6 text-[#6B6660] text-base leading-relaxed animate-fade-in">
                     {item.a}
                   </div>
                 )}
@@ -449,80 +558,79 @@ export default function Index() {
         </div>
       </section>
 
-      {/* ── CONTACTS / FORM ── */}
-      <section id="contacts" className="py-24 bg-[#0D0D0D] border-t border-[#1A1A1A]">
-        <div ref={ctaVis.ref} className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-          {/* Left */}
-          <div className={ctaVis.visible ? "animate-slide-left" : "opacity-0"}>
-            <SectionHeader tag="Связаться" title="Оставьте заявку на консультацию" />
-            <p className="text-[#555] text-sm leading-relaxed mb-8">
-              Расскажите о вашем проекте — в течение рабочего дня наш стратег свяжется с вами и подготовит первичный аудит соцсетей бесплатно.
+      {/* ── CONTACTS ── */}
+      <section id="contacts" className="py-32 bg-[#F4F2EE]">
+        <div ref={ctaVis.ref} className="max-w-[1400px] mx-auto px-6 lg:px-12 grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
+          <div className={`lg:col-span-5 ${ctaVis.visible ? "animate-slide-left" : "opacity-0"}`}>
+            <SectionHeader tag="09 · Контакты" title="Давайте обсудим ваш проект" />
+            <p className="text-[#6B6660] text-base leading-relaxed mb-10 -mt-4">
+              Расскажите о вашем проекте — в течение рабочего дня наш стратег свяжется
+              с вами и подготовит первичный аудит соцсетей бесплатно.
             </p>
-            <div className="space-y-4 text-sm">
-              <div className="flex items-center gap-3">
-                <Icon name="Phone" size={16} className="text-[#D42B2B]" />
-                <a href="tel:+74951234567" className="text-[#888] hover:text-white transition-colors">+7 (495) 123-45-67</a>
+            <div className="space-y-6">
+              <div className="flex items-start gap-5">
+                <Icon name="Phone" size={16} className="text-[#141414] mt-1" />
+                <div>
+                  <div className="text-[10px] tracking-[0.2em] uppercase text-[#6B6660] mb-1">Телефон</div>
+                  <a href="tel:+79397562843" className="text-lg font-['Cormorant'] font-medium hover:italic transition-all">+7 (939) 756-28-43</a>
+                </div>
               </div>
-              <div className="flex items-center gap-3">
-                <Icon name="Mail" size={16} className="text-[#D42B2B]" />
-                <a href="mailto:hello@smm-syndicate.ru" className="text-[#888] hover:text-white transition-colors">hello@smm-syndicate.ru</a>
+              <div className="flex items-start gap-5">
+                <Icon name="Mail" size={16} className="text-[#141414] mt-1" />
+                <div>
+                  <div className="text-[10px] tracking-[0.2em] uppercase text-[#6B6660] mb-1">Почта</div>
+                  <a href="mailto:smmsyndi@gmail.com" className="text-lg font-['Cormorant'] font-medium hover:italic transition-all">smmsyndi@gmail.com</a>
+                </div>
               </div>
-              <div className="flex items-center gap-3">
-                <Icon name="MapPin" size={16} className="text-[#D42B2B]" />
-                <span className="text-[#888]">Москва, Пресненская наб. 12, Башня «Федерация»</span>
+              <div className="flex items-start gap-5">
+                <Icon name="Clock" size={16} className="text-[#141414] mt-1" />
+                <div>
+                  <div className="text-[10px] tracking-[0.2em] uppercase text-[#6B6660] mb-1">Время работы</div>
+                  <div className="text-lg font-['Cormorant'] font-medium">9:00 — 19:00</div>
+                  <div className="text-sm text-[#6B6660] mt-1">Выходные — по договорённости</div>
+                </div>
               </div>
-            </div>
-            <div className="mt-8 flex gap-3">
-              {["Telegram", "Send", "Linkedin"].map((s, i) => (
-                <button key={i} className="w-10 h-10 border border-[#1A1A1A] flex items-center justify-center hover:border-[#D42B2B] hover:text-[#D42B2B] transition-all text-[#555]">
-                  <Icon name={s} fallback="Share2" size={14} />
-                </button>
-              ))}
             </div>
           </div>
 
-          {/* Form */}
-          <div className={ctaVis.visible ? "animate-fade-in-up delay-200" : "opacity-0"}>
+          <div className={`lg:col-span-7 ${ctaVis.visible ? "animate-fade-in-up delay-200" : "opacity-0"}`}>
             {sent ? (
-              <div className="border border-[#D42B2B]/30 bg-[#111] p-12 text-center">
-                <Icon name="CheckCircle2" size={40} className="text-[#D42B2B] mx-auto mb-4" />
-                <h3 className="text-xl font-bold uppercase mb-2">Заявка принята!</h3>
-                <p className="text-[#555] text-sm">Мы свяжемся с вами в течение рабочего дня.</p>
+              <div className="border border-[#D8D3C9] p-16 text-center bg-[#EDEAE3]">
+                <Icon name="Check" size={32} className="text-[#141414] mx-auto mb-6" />
+                <h3 className="font-['Cormorant'] text-3xl font-medium mb-3">Заявка принята</h3>
+                <p className="text-[#6B6660] text-sm">Мы свяжемся с вами в течение рабочего дня</p>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="border border-[#1A1A1A] bg-[#111] p-8 space-y-4">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <form onSubmit={handleSubmit} className="space-y-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   <div>
-                    <label className="text-[10px] tracking-widest uppercase text-[#555] block mb-1.5">Ваше имя *</label>
+                    <label className="text-[10px] tracking-[0.2em] uppercase text-[#6B6660] block mb-2">Имя</label>
                     <input required value={form.name} onChange={e => setForm(f => ({ ...f, name: e.target.value }))}
-                      placeholder="Иван Петров"
-                      className="w-full bg-[#0A0A0A] border border-[#1A1A1A] text-white text-sm px-4 py-3 focus:outline-none focus:border-[#D42B2B] transition-colors placeholder:text-[#333]" />
+                      className="w-full bg-transparent border-b border-[#D8D3C9] text-[#141414] text-lg py-3 focus:outline-none focus:border-[#141414] transition-colors font-['Cormorant']" />
                   </div>
                   <div>
-                    <label className="text-[10px] tracking-widest uppercase text-[#555] block mb-1.5">Телефон *</label>
+                    <label className="text-[10px] tracking-[0.2em] uppercase text-[#6B6660] block mb-2">Телефон</label>
                     <input required value={form.phone} onChange={e => setForm(f => ({ ...f, phone: e.target.value }))}
-                      placeholder="+7 (900) 000-00-00"
-                      className="w-full bg-[#0A0A0A] border border-[#1A1A1A] text-white text-sm px-4 py-3 focus:outline-none focus:border-[#D42B2B] transition-colors placeholder:text-[#333]" />
+                      className="w-full bg-transparent border-b border-[#D8D3C9] text-[#141414] text-lg py-3 focus:outline-none focus:border-[#141414] transition-colors font-['Cormorant']" />
                   </div>
                 </div>
                 <div>
-                  <label className="text-[10px] tracking-widest uppercase text-[#555] block mb-1.5">Компания</label>
+                  <label className="text-[10px] tracking-[0.2em] uppercase text-[#6B6660] block mb-2">Компания</label>
                   <input value={form.company} onChange={e => setForm(f => ({ ...f, company: e.target.value }))}
-                    placeholder="ООО «Название»"
-                    className="w-full bg-[#0A0A0A] border border-[#1A1A1A] text-white text-sm px-4 py-3 focus:outline-none focus:border-[#D42B2B] transition-colors placeholder:text-[#333]" />
+                    className="w-full bg-transparent border-b border-[#D8D3C9] text-[#141414] text-lg py-3 focus:outline-none focus:border-[#141414] transition-colors font-['Cormorant']" />
                 </div>
                 <div>
-                  <label className="text-[10px] tracking-widest uppercase text-[#555] block mb-1.5">Цель / задача</label>
+                  <label className="text-[10px] tracking-[0.2em] uppercase text-[#6B6660] block mb-2">Цель / задача</label>
                   <textarea value={form.goal} onChange={e => setForm(f => ({ ...f, goal: e.target.value }))}
-                    placeholder="Опишите кратко, что хотите улучшить..."
-                    rows={4}
-                    className="w-full bg-[#0A0A0A] border border-[#1A1A1A] text-white text-sm px-4 py-3 focus:outline-none focus:border-[#D42B2B] transition-colors resize-none placeholder:text-[#333]" />
+                    rows={3}
+                    className="w-full bg-transparent border-b border-[#D8D3C9] text-[#141414] text-lg py-3 focus:outline-none focus:border-[#141414] transition-colors resize-none font-['Cormorant']" />
                 </div>
                 <button type="submit"
-                  className="w-full bg-[#D42B2B] hover:bg-[#A01E1E] text-white font-bold tracking-widest uppercase py-4 text-sm transition-colors duration-200">
-                  Отправить заявку
+                  className="group flex items-center justify-between gap-4 bg-[#141414] text-[#F4F2EE] px-8 py-5 hover:bg-[#2B2B2B] transition-all duration-300 mt-8">
+                  <span className="text-xs tracking-[0.2em] uppercase font-medium">Отправить заявку</span>
+                  <Icon name="ArrowRight" size={16} className="group-hover:translate-x-1 transition-transform" />
                 </button>
-                <p className="text-[#333] text-[10px] text-center">Нажимая кнопку, вы соглашаетесь с политикой конфиденциальности</p>
+                <p className="text-[#6B6660] text-xs">Нажимая кнопку, вы соглашаетесь с политикой конфиденциальности</p>
               </form>
             )}
           </div>
@@ -530,29 +638,49 @@ export default function Index() {
       </section>
 
       {/* ── FOOTER ── */}
-      <footer className="border-t border-[#1A1A1A] py-12">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="flex flex-col md:flex-row justify-between items-start gap-8">
-            <div>
-              <div className="font-['Oswald'] text-lg font-bold tracking-widest uppercase mb-3">
-                SMM<span className="text-[#D42B2B]">—</span>SYNDICATE
-              </div>
-              <p className="text-[#444] text-xs max-w-xs leading-relaxed">Агентство полного цикла SMM-продвижения. Москва, 2016–2024.</p>
+      <footer className="bg-[#141414] text-[#D8D3C9] pt-20 pb-10">
+        <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-10 mb-16">
+            <div className="md:col-span-5">
+              <a href="#" className="flex items-center gap-2 mb-6">
+                <span className="font-['Cormorant'] text-3xl font-medium tracking-tight text-[#F4F2EE]">SMM</span>
+                <span className="w-1.5 h-1.5 bg-[#F4F2EE] rounded-full"></span>
+                <span className="font-['Cormorant'] text-3xl font-medium tracking-tight italic text-[#F4F2EE]">Syndicate</span>
+              </a>
+              <p className="text-sm leading-relaxed text-[#888] max-w-sm">
+                Агентство полного цикла SMM-продвижения. Превращаем социальные сети
+                в главный канал роста вашего бизнеса.
+              </p>
             </div>
-            <div className="flex flex-wrap gap-6">
-              {NAV_LINKS.map(l => (
-                <button key={l.href} onClick={() => scrollTo(l.href)}
-                  className="text-[10px] tracking-widest uppercase text-[#444] hover:text-[#D42B2B] transition-colors">
-                  {l.label}
-                </button>
-              ))}
+            <div className="md:col-span-3">
+              <div className="text-[10px] tracking-[0.2em] uppercase text-[#888] mb-4">Навигация</div>
+              <div className="flex flex-col gap-3">
+                {NAV_LINKS.slice(0, 5).map(l => (
+                  <button key={l.href} onClick={() => scrollTo(l.href)}
+                    className="text-sm text-[#D8D3C9] hover:text-[#F4F2EE] transition-colors text-left">
+                    {l.label}
+                  </button>
+                ))}
+              </div>
+            </div>
+            <div className="md:col-span-4">
+              <div className="text-[10px] tracking-[0.2em] uppercase text-[#888] mb-4">Контакты</div>
+              <div className="space-y-2 text-sm">
+                <a href="tel:+79397562843" className="block hover:text-[#F4F2EE] transition-colors">+7 (939) 756-28-43</a>
+                <a href="mailto:smmsyndi@gmail.com" className="block hover:text-[#F4F2EE] transition-colors">smmsyndi@gmail.com</a>
+                <div className="text-[#888]">9:00 — 19:00 · Выходные по договорённости</div>
+              </div>
             </div>
           </div>
-          <div className="mt-10 pt-6 border-t border-[#1A1A1A] flex flex-col md:flex-row justify-between items-center gap-3">
-            <p className="text-[#333] text-xs">© 2024 SMM-SYNDICATE. Все права защищены.</p>
-            <div className="flex gap-5 text-xs text-[#333]">
-              <button className="hover:text-[#555] transition-colors">Политика конфиденциальности</button>
-              <button className="hover:text-[#555] transition-colors">Пользовательское соглашение</button>
+
+          <div className="pt-8 border-t border-[#2B2B2B] grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="space-y-1 text-xs text-[#888]">
+              <div>© 2026 SMM-SYNDICATE. Все права защищены.</div>
+              <div>ИНН: 631406596159 · ОГРНИП: 326632700064895</div>
+            </div>
+            <div className="flex md:justify-end gap-6 text-xs text-[#888]">
+              <button className="hover:text-[#D8D3C9] transition-colors">Политика конфиденциальности</button>
+              <button className="hover:text-[#D8D3C9] transition-colors">Пользовательское соглашение</button>
             </div>
           </div>
         </div>
